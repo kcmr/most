@@ -1,5 +1,5 @@
 #! /usr/bin/env node
 
-const cssapi = require('../lib/cssapi');
+const apidocs = require('../lib/apidocs');
 
-console.log("cssapi.getCSSApi()", cssapi.getCSSApi());
+console.log(apidocs.cssApiTable());
