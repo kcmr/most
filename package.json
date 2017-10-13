@@ -1,0 +1,9 @@
+{
+  "name": "most",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "bin": {
+    "most:cssapi": "bin/index.js"
+  }
+}
