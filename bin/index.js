@@ -2,4 +2,4 @@
 
 const apidocs = require('../lib/apidocs');
 
-console.log(apidocs.cssApiTable());
+console.log(apidocs.writeApi());

@@ -7,6 +7,7 @@
     "most:cssapi": "bin/index.js"
   },
   "dependencies": {
-    "array-to-table": "https://github.com/kcmr/array-to-table.git#458ffce66305d"
+    "array-to-table": "https://github.com/kcmr/array-to-table.git#458ffce66305d",
+    "polymer-analyzer": "^2.3.0"
   }
 }
