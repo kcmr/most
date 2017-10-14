@@ -5,13 +5,13 @@
 ## Installation
 
 ```sh
-npm i -g most
+npm i -g most-cli
 ```
 
 or
 
 ```sh
-yarn global add most
+yarn global add most-cli
 ```
 
 ## Usage
