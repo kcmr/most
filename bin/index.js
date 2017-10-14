@@ -1,5 +1,5 @@
 #! /usr/bin/env node
 
-const apidocs = require('../lib/apidocs');
+const cssapi = require('../lib/cssapi');
 
-console.log(apidocs.writeApi());
+cssapi.updateCSSDocs(require('path').basename(process.cwd()));

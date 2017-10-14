@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "array-to-table": "https://github.com/kcmr/array-to-table.git#458ffce66305d",
+    "chalk": "^2.1.0",
     "polymer-analyzer": "^2.3.0"
   }
 }
