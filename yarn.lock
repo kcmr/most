@@ -115,9 +115,9 @@ argparse@^1.0.7:
   dependencies:
     sprintf-js "~1.0.2"
 
-"array-to-table@https://github.com/kcmr/array-to-table.git#458ffce66305d":
+"array-to-table@git://github.com/kcmr/array-to-table.git#458ffce66305d":
   version "1.0.1"
-  resolved "https://github.com/kcmr/array-to-table.git#458ffce66305d0ce7f20263d2b63f6a459e50af8"
+  resolved "git://github.com/kcmr/array-to-table.git#458ffce66305d0ce7f20263d2b63f6a459e50af8"
 
 array-union@^1.0.1:
   version "1.0.2"
