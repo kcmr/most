@@ -14,11 +14,15 @@
   },
   "devDependencies": {
     "eslint": "^4.8.0",
-    "eslint-config-xo-space": "^0.16.0"
+    "eslint-config-xo-space": "^0.16.0",
+    "pre-commit": "^1.2.2"
   },
   "scripts": {
     "pretest": "eslint . --fix"
   },
+  "pre-commit": [
+    "pretest"
+  ],
   "eslintConfig": {
     "extends": "xo-space",
     "rules": {
