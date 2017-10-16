@@ -22,14 +22,23 @@ $ cd <component-path> && most <command>
 
 ## Commands
 
+Command options can also be set in a [`.mostrc` file](#config-file) placed in the component's root or any other parent directory.
+
 ### `css-api`
 
 ```sh
 $ cd your-component
-$ most css-api --file your-component-styles.css
+$ most css-api --file your-component-styles.css --docs README.md
 ```
 
-The command compares your current CSS API docs inside your component's HTML (markdown table) with the CSS properties and mixins found in the specified file ([--file option](#config-file)) and prints a markdown table with all the properties sorted alfabetically that you can happily copy and paste into your HTML and/or README.md.
+#### Options
+
+Name | Description
+:----|:-----------
+`file` | Required. File where the CSS properties will be searched.
+`docs` | Optional (defaults to `<component>`.html). File where the CSS docs in markdown format will be searched. 
+
+The command compares your current CSS API docs inside your component's HTML (markdown table) or the specified file in `--docs` param with the CSS properties and mixins found in `--file` and prints a markdown table with all the properties sorted alfabetically that you can happily copy and paste into your HTML and/or README.md.
 
 The command also warns you about API diffs (new properties) and potentially BREAKING CHANGES (removed properties) that may require a major version upgrade for the component.
 
@@ -55,7 +64,8 @@ Example:
 ```json
 {
   "css-api": {
-    "file": "{{component}}-styles.html"
+    "file": "{{component}}-styles.html",
+    "docs": "README.md"
   }
 }
 ```

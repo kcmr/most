@@ -14,6 +14,10 @@ const argv = yargs
       describe: 'File where the CSS properties will be searched',
       demand: true,
       alias: 'f'
+    },
+    docs: {
+      describe: 'File where the CSS docs in markdown format will be searched',
+      alias: 'd'
     }
   })
   .command('public-api', 'Writes a file (public-api.json) with the public API of the component')
@@ -22,7 +26,7 @@ const argv = yargs
   .argv;
 
 const commands = {
-  'css-api': () => require('../lib/cssapi').updateCSSDocs(component, argv.file.replace('{{component}}', component)),
+  'css-api': () => require('../lib/cssapi').updateCSSDocs(component, argv.file.replace('{{component}}', component), argv.docs),
   'public-api': () => require('../lib/apidocs').writeApi(component)
 };
 
