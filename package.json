@@ -31,19 +31,29 @@
     "pre-commit": "^1.2.2"
   },
   "scripts": {
-    "pretest": "eslint . --fix"
+    "pretest": "eslint . --fix",
+    "test": "jest --coverage"
   },
   "pre-commit": [
     "pretest"
   ],
+  "jest": {
+    "testEnvironment": "node",
+    "coverageDirectory": "./coverage/"
+  },
   "eslintConfig": {
     "extends": "xo-space",
     "rules": {
       "capitalized-comments": 0,
+      "no-warning-comments": 0,
       "radix": 0
     },
     "env": {
+      "jest": true,
       "node": true
     }
-  }
+  },
+  "eslintIgnore": [
+    "coverage/*"
+  ]
 }
