@@ -22,25 +22,40 @@ $ cd <component-path> && most <command>
 
 ## Commands
 
-Command options can also be set in a [`.mostrc` file](#config-file) placed in the component's root or any other parent directory.
+Command params can also be set in a [`.mostrc` file](#config-file) placed in the component's root or any other parent directory.
 
 ### `css-api`
 
 ```sh
 $ cd your-component
-$ most css-api --file your-component-styles.css --docs README.md
+$ most css-api
 ```
 
-#### Options
+#### Params
 
-Name | Description
-:----|:-----------
-`file` | Required. File where the CSS properties will be searched.
-`docs` | Optional (defaults to `<component>`.html). File where the CSS docs in markdown format will be searched. 
+Name | Description | Default
+:----|:------------|:-------
+`--file` | File where the CSS properties will be searched. | `<component>`.html
+`--docs` | File where the CSS docs in markdown format will be searched. | `<component>`.html
 
-The command compares your current CSS API docs inside your component's HTML (markdown table) or the specified file in `--docs` param with the CSS properties and mixins found in `--file` and prints a markdown table with all the properties sorted alfabetically that you can happily copy and paste into your HTML and/or README.md.
+The command compares your current CSS API docs inside your component's HTML (markdown table) with the CSS properties and mixins found in the component styles and prints a markdown table with all the properties sorted alfabetically that you can happily copy and paste into your HTML and/or README.
 
 The command also warns you about API diffs (new properties) and potentially BREAKING CHANGES (removed properties) that may require a major version upgrade for the component.
+
+Used without params, it will search CSS properties and docs in `<your-component-name>`.html.   
+If you need to specify a different file for the styles, you can use the `--file` param. The placeholder `{{component}}` can be used instead of the component's name.
+
+Example with custom path to styles:
+
+```sh
+$ most css-api --file {{component}}-styles.html
+```
+
+Example with custom path to docs:
+
+```sh
+$ most css-api --docs README.md
+```
 
 ![Screenshot of the css-api command line output](https://github.com/kcmr/most/blob/master/images/most-cssapi.png?raw=true)
 
@@ -69,5 +84,3 @@ Example:
   }
 }
 ```
-
-Now you can run `most css-api` without the required `--file` param.
