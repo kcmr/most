@@ -12,7 +12,6 @@ const argv = yargs
   .command('css-api', 'Prints a markdown table with the CSS API of the component', {
     file: {
       describe: 'File where the CSS properties will be searched',
-      demand: true,
       alias: 'f'
     },
     docs: {
@@ -25,8 +24,10 @@ const argv = yargs
   .help()
   .argv;
 
+const replacePlaceholder = (str, placeholder, replacement) => str ? str.replace(placeholder, replacement) : str;
+
 const commands = {
-  'css-api': () => require('../lib/cssapi').updateCSSDocs(component, argv.file.replace('{{component}}', component), argv.docs),
+  'css-api': () => require('../lib/cssapi').updateCSSDocs(component, replacePlaceholder(argv.file, '{{component}}', component), argv.docs),
   'public-api': () => require('../lib/apidocs').writeApi(component)
 };
 
