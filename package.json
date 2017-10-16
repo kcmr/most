@@ -27,6 +27,7 @@
   "devDependencies": {
     "eslint": "^4.8.0",
     "eslint-config-xo-space": "^0.16.0",
+    "jest": "^21.2.1",
     "pre-commit": "^1.2.2"
   },
   "scripts": {
