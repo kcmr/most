@@ -59,6 +59,7 @@ $ most css-api --docs README.md
 
 ![Screenshot of the css-api command line output](https://github.com/kcmr/most/blob/master/images/most-cssapi.png?raw=true)
 
+<!--
 ### `public-api` (_Work In Progress_)
 
 ```sh
@@ -67,6 +68,7 @@ $ most public-api
 ```
 
 The command writes a file (`public-api.json`) with the public properties, methods, events and CSS properties of the analyzed component. 
+-->
 
 ## Config file
 
