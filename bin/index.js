@@ -6,6 +6,8 @@ const yargs = require('yargs');
 const component = require('path').basename(process.cwd());
 const configPath = findUp.sync('.mostrc');
 const config = configPath ? JSON.parse(fs.readFileSync(configPath)) : {};
+const cssApi = require('../lib/cssapi');
+const publicApi = require('../lib/apidocs');
 
 const argv = yargs
   .config(config['css-api'])
@@ -27,8 +29,8 @@ const argv = yargs
 const replacePlaceholder = (str, placeholder, replacement) => str ? str.replace(placeholder, replacement) : str;
 
 const commands = {
-  'css-api': () => require('../lib/cssapi').updateCSSDocs(component, replacePlaceholder(argv.file, '{{component}}', component), argv.docs),
-  'public-api': () => require('../lib/apidocs').writeApi(component)
+  'css-api': () => cssApi.updateCSSDocs(component, replacePlaceholder(argv.file, '{{component}}', component), argv.docs),
+  'public-api': () => publicApi.writeApi(component)
 };
 
 if (commands[argv._[0]]) {
