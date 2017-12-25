@@ -21,6 +21,7 @@
     "array-to-table": "git://github.com/kcmr/array-to-table.git#458ffce66305d",
     "chalk": "^2.1.0",
     "find-up": "^2.1.0",
+    "markdown-table": "^1.1.1",
     "polymer-analyzer": "^2.3.0",
     "yargs": "^9.0.1"
   },
