@@ -190,10 +190,6 @@ array-equal@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/array-equal/-/array-equal-1.0.0.tgz#8c2a5ef2472fd9ea742b04c77a75093ba2757c93"
 
-"array-to-table@git://github.com/kcmr/array-to-table.git#458ffce66305d":
-  version "1.0.1"
-  resolved "git://github.com/kcmr/array-to-table.git#458ffce66305d0ce7f20263d2b63f6a459e50af8"
-
 array-union@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/array-union/-/array-union-1.0.2.tgz#9a34410e4f4e3da23dea375be5be70f24778ec39"
