@@ -15,7 +15,7 @@
   },
   "license": "MIT",
   "bin": {
-    "most": "bin/index.js"
+    "most": "bin/cli.js"
   },
   "dependencies": {
     "chalk": "^2.1.0",
