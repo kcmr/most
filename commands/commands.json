@@ -1,0 +1,22 @@
+{
+  "css-api": {
+    "description": "Prints a markdown table with the CSS API of the component",
+    "params": {
+      "file": {
+        "describe": "File where the CSS properties will be searched",
+        "alias": "f"
+      },
+      "docs": {
+        "describe": "File where the CSS docs in markdown format will be searched",
+        "alias": "d"
+      },
+      "sort": {
+        "describe": "Whether the CSS vars and mixin in the generated table should be alphabetically sorted",
+        "alias": "s"
+      }
+    }
+  },
+  "public-api": {
+    "description": "Writes a file (public-api.json) with the public API of the component"
+  }
+}

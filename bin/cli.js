@@ -10,37 +10,30 @@ const configPath = findUp.sync('.mostrc');
 const config = configPath ? JSON.parse(fs.readFileSync(configPath)) : {};
 const cssApi = require('../lib/cssapi');
 const publicApi = require('../lib/apidocs');
+const commands = require('../commands/commands');
+const [cssApiCommands, publicApiCommands] = Object.keys(commands);
 
 const argv = yargs
   .config(config['css-api'])
-  .command('css-api', 'Prints a markdown table with the CSS API of the component', {
-    file: {
-      describe: 'File where the CSS properties will be searched',
-      alias: 'f'
-    },
-    docs: {
-      describe: 'File where the CSS docs in markdown format will be searched',
-      alias: 'd'
-    }
-  })
-  .command('public-api', 'Writes a file (public-api.json) with the public API of the component')
+  .command('css-api', cssApiCommands.description, cssApiCommands.params)
+  .command('public-api', publicApiCommands.description)
   .demandCommand()
   .help()
   .argv;
 
-const replacePlaceholder = (str, placeholder, replacement) => str ? str.replace(placeholder, replacement) : str;
+const replacePlaceholder = (str, placeholder, replacement) => str.replace(placeholder, replacement);
 
 // cssApi params
-const stylesFile = replacePlaceholder(argv.file, '{{component}}', component);
-const {sort, docs} = argv;
+const {sort, docs, file} = argv;
+const stylesFile = replacePlaceholder(file, '{{component}}', component);
 
-const commands = {
+const command = {
   'css-api': () => cssApi.updateCSSDocs(component, stylesFile, docs, sort),
   'public-api': () => publicApi.writeApi(component)
 };
 
-if (commands[argv._[0]]) {
-  commands[argv._[0]](argv);
+if (command[argv._[0]]) {
+  command[argv._[0]](argv);
 } else {
   console.log('Unknown command. Run "most help" for a list of available commands.');
 }
