@@ -30,8 +30,12 @@ const argv = yargs
 
 const replacePlaceholder = (str, placeholder, replacement) => str ? str.replace(placeholder, replacement) : str;
 
+// cssApi params
+const stylesFile = replacePlaceholder(argv.file, '{{component}}', component);
+const {sort, docs} = argv;
+
 const commands = {
-  'css-api': () => cssApi.updateCSSDocs(component, replacePlaceholder(argv.file, '{{component}}', component), argv.docs),
+  'css-api': () => cssApi.updateCSSDocs(component, stylesFile, docs, sort),
   'public-api': () => publicApi.writeApi(component)
 };
 
