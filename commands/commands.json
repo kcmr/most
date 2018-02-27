@@ -13,6 +13,10 @@
       "sort": {
         "describe": "Whether the CSS vars and mixin in the generated table should be alphabetically sorted",
         "alias": "s"
+      },
+      "unformatted": {
+        "describe": "Whether the markdown table should be rendered without format (cells not aligned)",
+        "alias": "u"
       }
     }
   },
