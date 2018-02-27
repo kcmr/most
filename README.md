@@ -33,12 +33,12 @@ $ most css-api
 
 #### Params
 
-     Name       | Alias |                                Description                                |      Default
-:-------------- | :---- | :------------------------------------------------------------------------ | ------------------
-`--file`        | `f`   | File where the CSS properties will be searched.                           | `<component>`.html
-`--docs`        | `d`   | File where the CSS docs in markdown format will be searched.              | `<component>`.html
-`--sort`        | `s`   | Set to true to sort CSS properties alphabetically.                        | `false`
-`--unformatted` | `u`   | Set to true to render the markdown table without format (unaligned cells) | `false`
+|    Name        | Alias |                                Description                                |      Default       |
+|:-------------- | :---- | :------------------------------------------------------------------------ | -------------------|
+|`--file`        | `f`   | File where the CSS properties will be searched.                           | `<component>`.html |
+|`--docs`        | `d`   | File where the CSS docs in markdown format will be searched.              | `<component>`.html |
+|`--sort`        | `s`   | Set to true to sort CSS properties alphabetically.                        | `false`            |
+|`--unformatted` | `u`   | Set to true to render the markdown table without format (unaligned cells) | `false`            | 
 
 The command compares your current CSS API docs inside your component's HTML (markdown table) with the CSS properties and mixins found in the component styles and prints a markdown table with all the properties found in your component styles. If a property is not documented previously in your docs, it will take the value used in styles.
 
