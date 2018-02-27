@@ -15,12 +15,12 @@
   },
   "license": "MIT",
   "bin": {
-    "most": "bin/index.js"
+    "most": "bin/cli.js"
   },
   "dependencies": {
-    "array-to-table": "git://github.com/kcmr/array-to-table.git#458ffce66305d",
     "chalk": "^2.1.0",
     "find-up": "^2.1.0",
+    "markdown-table": "^1.1.1",
     "polymer-analyzer": "^2.3.0",
     "yargs": "^9.0.1"
   },
@@ -31,19 +31,29 @@
     "pre-commit": "^1.2.2"
   },
   "scripts": {
-    "pretest": "eslint . --fix"
+    "pretest": "eslint . --fix",
+    "test": "jest --coverage"
   },
   "pre-commit": [
     "pretest"
   ],
+  "jest": {
+    "testEnvironment": "node",
+    "coverageDirectory": "./coverage/"
+  },
   "eslintConfig": {
     "extends": "xo-space",
     "rules": {
       "capitalized-comments": 0,
+      "no-warning-comments": 0,
       "radix": 0
     },
     "env": {
+      "jest": true,
       "node": true
     }
-  }
+  },
+  "eslintIgnore": [
+    "coverage/*"
+  ]
 }
