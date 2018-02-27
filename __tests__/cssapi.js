@@ -25,13 +25,7 @@ describe('css-api', () => {
 
     it('uses the CSS file name without extension as namespace if not specified', () => {
       const result = cssapi.getCSSApi(`${component}/paper-toast.html`);
-      const expected = ['--paper-toast-background-color', '--paper-toast-color'];
-      expect(result).toEqual(expected);
-    });
-
-    it('returns CSS properties sorted alphabetically', () => {
-      const result = cssapi.getCSSApi(`${component}/paper-toast.html`, namespace);
-      const expected = ['--paper-toast-background-color', '--paper-toast-color'];
+      const expected = [['--paper-toast-background-color', ''], ['--paper-toast-color', '']];
       expect(result).toEqual(expected);
     });
   });
