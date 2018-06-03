@@ -25,7 +25,7 @@ describe('css-api', () => {
 
     it('uses the CSS file name without extension as namespace if not specified', () => {
       const result = cssapi.getCSSApi(`${component}/paper-toast.html`);
-      const expected = [['--paper-toast-background-color', ''], ['--paper-toast-color', '']];
+      const expected = [['--paper-toast-background-color', '#323232'], ['--paper-toast-color', '#f1f1f1']];
       expect(result).toEqual(expected);
     });
   });
